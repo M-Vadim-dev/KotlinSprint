@@ -7,10 +7,17 @@ fun main() {
 }
 
 fun greeting(userName: String, time: Int): String {
-    if (time in 5..11) println("Доброе утро! $userName")
-    else if (time in 12..17) println("Добрый день! $userName")
-    else if (time in 18..23) println("Добрый вечер! $userName")
-    else println("Доброй ночи! $userName")
+    val morningStart = 6
+    val morningEnd = 11
+    val dayStart = 12
+    val dayEnd = 17
+    val eveningStart = 18
+    val eveningEnd = 23
+    when (time) {
+        in morningStart..morningEnd -> println("Доброе утро! $userName")
+        in dayStart..dayEnd -> println("Добрый день! $userName")
+        in eveningStart..eveningEnd -> println("Добрый вечер! $userName")
+        else -> println("Доброй ночи! $userName")
+    }
     return userName
 }
-

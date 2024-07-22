@@ -11,7 +11,7 @@ fun main() {
     val differenceYear = yearToday - userBirthYear
 
     if (differenceYear >= AGE_OF_MAJORITY) {
-        println("Показать кран со скрытым контентом")
+        println("Показать экран со скрытым контентом")
     }
     if (differenceYear < AGE_OF_MAJORITY) {
         println("Вернуться на главный экран")

@@ -5,10 +5,10 @@ fun main() {
     val winningNumber2 = 31
 
     println("Введите первое число от 0 до 42:")
-    val userNumber1 = readLine()?.toIntOrNull()
+    val userNumber1 = readln().toIntOrNull()
 
     println("Введите второе число от 0 до 42:")
-    val userNumber2 = readLine()?.toIntOrNull()
+    val userNumber2 = readln().toIntOrNull()
 
     if ((userNumber1 == winningNumber1 && userNumber2 == winningNumber2) ||
         (userNumber1 == winningNumber2 && userNumber2 == winningNumber1)

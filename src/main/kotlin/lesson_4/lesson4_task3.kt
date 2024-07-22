@@ -12,7 +12,7 @@ fun main() {
     val currentSeason: String = "зима"
 
     val favorableConditions: Boolean =
-        IS_SUNNY_WEATHER && IS_TENT_OPEN && (humidity == REQUIRED_HUMIDITY) && (currentSeason == SEASON)
+        (isSunnyWeather == IS_SUNNY_WEATHER) && (isTentOpen == IS_TENT_OPEN) && (humidity == REQUIRED_HUMIDITY) && (currentSeason == SEASON)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $favorableConditions")
 }

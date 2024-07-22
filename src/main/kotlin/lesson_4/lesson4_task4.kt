@@ -6,9 +6,10 @@ fun main() {
     val legsAndBackExercises = (trainingDay % 2) != 0
 
     println(
-        """Упражнения для рук:    $legsAndBackExercises
-Упражнения для ног:    ${!legsAndBackExercises}
-Упражнения для спины:  ${!legsAndBackExercises}
-Упражнения для пресса: $legsAndBackExercises"""
+        """Упражнения для рук: $legsAndBackExercises
+Упражнения для ног: ${!legsAndBackExercises}
+Упражнения для спины: ${!legsAndBackExercises}
+Упражнения для пресса: $legsAndBackExercises
+""".trimIndent()
     )
 }

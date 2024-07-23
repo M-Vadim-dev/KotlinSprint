@@ -7,7 +7,7 @@ fun main() {
     val yearToday = dateTime.substring(0, 4).toInt()
 
     print("Введите год рождения: ")
-    val userBirthYear = readLine()!!.toInt()
+    val userBirthYear = readln().toInt()
     val differenceYear = yearToday - userBirthYear
 
     if (differenceYear >= AGE_OF_MAJORITY) {

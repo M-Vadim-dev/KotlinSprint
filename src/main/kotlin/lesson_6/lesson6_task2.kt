@@ -2,16 +2,16 @@ package lesson_6
 
 fun main() {
     println("Введите количество секунд для таймера:")
-    var secondsInput = readln().toInt()
+    val secondsInput = readln().toInt()
+    var secondsPassed = 0
     var pause = false
 
     println("Для паузы таймера нажмите Enter.")
 
-    while (secondsInput > 0) {
+    while (secondsPassed < secondsInput) {
         if (!pause) {
-            println("Осталось $secondsInput секунд")
             Thread.sleep(1000)
-            secondsInput--
+            secondsPassed++
 
             // Проверка ввода для приостановки таймера
             if (System.`in`.available() > 0) {
@@ -28,6 +28,6 @@ fun main() {
             }
         }
     }
-    println("Таймер завершен!")
+    println("Прошло $secondsInput секунд.")
 }
 

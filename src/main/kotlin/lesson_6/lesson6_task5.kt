@@ -19,17 +19,17 @@ fun main() {
 
         if (users[loginInput] == passwordInput) {
             println("Для продолжения авторизации нужно решить пример:")
-            var counter = 3
 
-            while (counter > 0) {
-                val (number1, number2) = (1..9).random() to (1..9).random()
+            for (attempt in 3 downTo 1) {
+                val number1 = (1..9).random()
+                val number2 = (1..9).random()
                 print("$number1 + $number2 = ")
 
                 if (readln().toInt() == number1 + number2) {
                     println("Добро пожаловать!")
                     return
                 }
-                println("Неверно. У вас осталось ${--counter} попыток.")
+                println("Неверно. У вас осталось ${attempt - 1} попыток.")
             }
             println("Доступ запрещен.")
             break

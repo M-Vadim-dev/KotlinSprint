@@ -2,16 +2,17 @@ package lesson_7
 
 fun main() {
     val letters = 'a'..'z'
-    val capitalizeLetters = 'A'..'Z'
     val digits = '0'..'9'
-    val range = 1..6
+    val lengthPassword = 0 until 6
+    var password = ""
 
-    val combined = letters + digits + capitalizeLetters
-    var randomPassword = ""
-
-    for (i in range) {
-        val randomIndex = (Math.random() * combined.size).toInt()
-        randomPassword += combined[randomIndex]
+    for (i in lengthPassword) {
+        password +=
+            if (i % 2 == 0) {
+                letters.random()
+            } else {
+                digits.random()
+            }
     }
-    println("Сгенерированный пароль: $randomPassword")
+    println("Сгенерированный пароль: $password")
 }

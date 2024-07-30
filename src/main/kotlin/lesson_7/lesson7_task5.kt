@@ -17,11 +17,19 @@ fun main() {
 
     val combined = letters + digits + capitalizeLetters
     var randomPassword = ""
-    val startIndex = 1
 
+    //обязательные символы
+    randomPassword += letters.random()
+    randomPassword += capitalizeLetters.random()
+    randomPassword += digits.random()
+
+    val startIndex = 3
     for (i in startIndex..rangeInput) {
         val randomIndex = (Math.random() * combined.size).toInt()
         randomPassword += combined[randomIndex]
     }
+    //перемешиваем символы
+    randomPassword = randomPassword.toList().shuffled().joinToString("")
+
     println("Сгенерированный пароль: $randomPassword")
 }

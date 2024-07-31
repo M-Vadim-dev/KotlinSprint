@@ -6,6 +6,6 @@ fun main() {
     println("Введите ингредиент, который хотите найти: ")
     val searchIngredient = readln().lowercase()
 
-    if (ingredients.contains(searchIngredient)) println("Ингредиент $searchIngredient в рецепте есть")
+    if (searchIngredient in ingredients) println("Ингредиент $searchIngredient в рецепте есть")
     else println("Такого ингредиента в рецепте нет")
 }

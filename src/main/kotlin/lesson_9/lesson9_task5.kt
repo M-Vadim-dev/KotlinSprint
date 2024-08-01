@@ -11,12 +11,7 @@ fun main() {
         ingredientsSet.add(ingredient.trim())
     }
 
-    val sortedIngredients = ingredientsSet.sorted().toMutableList()
-
-    val firstIngredient = sortedIngredients.removeAt(0).replaceFirstChar { it.uppercase() }
-    sortedIngredients.add(0, firstIngredient)
-
-    val resultIngredients = sortedIngredients.joinToString(", ")
+    val resultIngredients = ingredientsSet.sorted().joinToString(", ").replaceFirstChar { it.uppercase() }
 
     println("Отсортированный список ингредиентов: $resultIngredients")
 }

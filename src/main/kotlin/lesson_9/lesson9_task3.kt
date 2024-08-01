@@ -10,12 +10,10 @@ fun main() {
     println("Введите количество порций омлета:")
     val portions = readln().toInt()
 
-    val totalEggs = ingredientsPerPortion[0] * portions
-    val totalMilk = ingredientsPerPortion[1] * portions
-    val totalButter = ingredientsPerPortion[2] * portions
+    val totalIngredients = ingredientsPerPortion.map { it * portions }
 
     println("На $portions порций вам понадобится:")
-    println("Яиц – $totalEggs шт.")
-    println("Молока – $totalMilk мл.")
-    println("Сливочного масла – $totalButter гр.")
+    println("Яиц – ${totalIngredients[0]} шт.")
+    println("Молока – ${totalIngredients[1]} мл.")
+    println("Сливочного масла – ${totalIngredients[2]} гр.")
 }

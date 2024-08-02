@@ -7,13 +7,14 @@ fun main() {
 }
 
 fun generatePassword(length: Int): String {
-    val digits = "0123456789"
-    val specialChars = "!\"#$%&'()*+,-./ "
+    val digits = 0..9
+    val specialChars = (32..47).map { it.toChar() }
+    println(specialChars)
     var password = ""
 
     for (i in 0 until length) {
-        val char = if (i % 2 == 0) digits[(Math.random() * digits.length).toInt()]
-        else specialChars[(Math.random() * specialChars.length).toInt()]
+        val char = if (i % 2 == 0) digits.random()
+        else specialChars.random()
         password += char
     }
     return password

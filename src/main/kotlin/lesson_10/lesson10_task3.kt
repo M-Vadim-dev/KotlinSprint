@@ -9,7 +9,6 @@ fun main() {
 fun generatePassword(length: Int): String {
     val digits = 0..9
     val specialChars = (32..47).map { it.toChar() }
-    println(specialChars)
     var password = ""
 
     for (i in 0 until length) {

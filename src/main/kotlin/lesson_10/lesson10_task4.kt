@@ -2,15 +2,14 @@ package lesson_10
 
 fun main() {
     var playerWins = 0
-    playRound()
 
     while (true) {
+        playRound()
         print("Хотите бросить кости еще раз?\nВведите Да или Нет: ")
-        val continueGame = readln().lowercase()
+        val continueGame = readln()
 
-        if (continueGame == "да") {
+        if (continueGame.equals("да", ignoreCase = true)) {
             playerWins++
-            playRound()
         } else {
             println("Количество выигрышных партий игроком: $playerWins")
             break
@@ -20,20 +19,15 @@ fun main() {
 
 fun rollGameDice(): Int = (1..6).random()
 
-fun playRound(): Int {
+fun playRound() {
     val playerRoll = rollGameDice()
     val computerRoll = rollGameDice()
     println("Игрок бросает кости и получает: $playerRoll")
     println("Компьютер бросает кости и получает: $computerRoll")
 
-    if (playerRoll > computerRoll) {
+    if (playerRoll > computerRoll)
         println("Победило человечество!")
-        return 1
-    } else if (computerRoll > playerRoll) {
+    else if (computerRoll > playerRoll)
         println("Победила машина!")
-        return 0
-    } else {
-        println("Ничья!")
-        return 0
-    }
+    else println("Ничья!")
 }

@@ -28,7 +28,6 @@ class User2(
 
 fun main() {
     val user = User2(1, "user1", "pass123", "user1@mail.ru")
-
     user.setBio()
     user.changePassword()
     user.printUserInfo()

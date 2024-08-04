@@ -3,17 +3,18 @@ package lesson_10
 const val LOGIN = "user123"
 const val PASSWORD = "pass123"
 
-val CART = listOf("товар1", "товар2", "товар3")
-
 fun main() {
+    val cart = listOf("товар1", "товар2", "товар3")
     val usernameInput = "user123"
     val passwordInput = "pass123"
 
-    val token = authorize(usernameInput, passwordInput)
-    val cart = getCart(token)
+    val token = authorize(usernameInput, passwordInput) ?: run {
+        println("Неудачная авторизация.")
+        return
+    }
+    val shoppingCart = getCart(token, cart)
 
-    if (cart != null) println("Содержимое корзины: $cart")
-    else println("Неудачная авторизация.")
+    println("Содержимое корзины: $shoppingCart")
 }
 
 fun generateToken(): String {
@@ -29,4 +30,4 @@ fun authorize(username: String, password: String): String? =
     if (username == LOGIN && password == PASSWORD) generateToken()
     else null
 
-fun getCart(token: String?): List<String>? = if (token != null) CART else null
+fun getCart(token: String, cart: List<String>): List<String> = cart

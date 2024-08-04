@@ -1,10 +1,10 @@
 package lesson_12
 
-class WeatherData(
-    var daytimeTemperature: Float = 20.0f,
-    var nighttimeTemperature: Float = 10.0f,
-    var precipitation: Float = 0.0f,
-) {
+class WeatherData {
+    var daytimeTemperature: Float = 20.0f
+    var nighttimeTemperature: Float = 10.0f
+    var precipitation: Float = 0.0f
+
     fun displayWeather() {
         println("Дневная температура: $daytimeTemperature °C")
         println("Ночная температура: $nighttimeTemperature °C")

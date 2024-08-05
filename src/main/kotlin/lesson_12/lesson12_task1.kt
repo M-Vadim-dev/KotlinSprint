@@ -6,6 +6,7 @@ class WeatherData {
     var precipitation: Boolean = false
 
     fun displayWeather() {
+        println("Погода на день:")
         println("Дневная температура: $daytimeTemperature °C")
         println("Ночная температура: $nighttimeTemperature °C")
         if (precipitation) println("Осадки ожидаются.")
@@ -24,9 +25,6 @@ fun main() {
     weatherDay2.daytimeTemperature = 30.0f
     weatherDay2.nighttimeTemperature = 20.0f
 
-    println("Погода на день 1:")
     weatherDay1.displayWeather()
-
-    println("\nПогода на день 2:")
     weatherDay2.displayWeather()
 }

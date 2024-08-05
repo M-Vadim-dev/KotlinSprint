@@ -4,7 +4,6 @@ const val LOGIN = "user123"
 const val PASSWORD = "pass123"
 
 fun main() {
-    val cart = listOf("товар1", "товар2", "товар3")
     val usernameInput = "user123"
     val passwordInput = "pass123"
 
@@ -12,7 +11,7 @@ fun main() {
         println("Неудачная авторизация.")
         return
     }
-    val shoppingCart = getCart(token, cart)
+    val shoppingCart = getCart(token)
 
     println("Содержимое корзины: $shoppingCart")
 }
@@ -30,4 +29,7 @@ fun authorize(username: String, password: String): String? =
     if (username == LOGIN && password == PASSWORD) generateToken()
     else null
 
-fun getCart(token: String, cart: List<String>): List<String> = cart
+fun getCart(token: String): List<String> {
+    val cart = listOf("товар1", "товар2", "товар3")
+    return cart
+}

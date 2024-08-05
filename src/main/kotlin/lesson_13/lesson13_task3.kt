@@ -14,6 +14,7 @@ fun main() {
         ContactDirectory("Елена", 89123456782, "GitHub"),
         ContactDirectory("Сергей", 89123456783, null)
     )
+
     printUniqueCompanies(contacts)
 }
 

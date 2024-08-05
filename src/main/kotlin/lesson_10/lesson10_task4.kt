@@ -3,31 +3,30 @@ package lesson_10
 fun main() {
     var playerWins = 0
 
-    while (true) {
-        playRound()
+    do {
+        if (playRound()) playerWins++
         print("Хотите бросить кости еще раз?\nВведите Да или Нет: ")
-        val continueGame = readln()
+    } while (readln().equals("да", ignoreCase = true))
 
-        if (continueGame.equals("да", ignoreCase = true)) {
-            playerWins++
-        } else {
-            println("Количество выигрышных партий игроком: $playerWins")
-            break
-        }
-    }
+    println("Количество выигрышных партий игроком: $playerWins")
 }
 
 fun rollGameDice(): Int = (1..6).random()
 
-fun playRound() {
+fun playRound(): Boolean {
     val playerRoll = rollGameDice()
     val computerRoll = rollGameDice()
     println("Игрок бросает кости и получает: $playerRoll")
     println("Компьютер бросает кости и получает: $computerRoll")
 
-    if (playerRoll > computerRoll)
+    return if (playerRoll > computerRoll) {
         println("Победило человечество!")
-    else if (computerRoll > playerRoll)
+        true
+    } else if (computerRoll > playerRoll) {
         println("Победила машина!")
-    else println("Ничья!")
+        false
+    } else {
+        println("Ничья!")
+        false
+    }
 }

@@ -9,10 +9,10 @@ class ContactDirectory(
 fun main() {
     val contacts = listOf(
         ContactDirectory("Ростислав", 89123456789, "Reddit"),
-        ContactDirectory("Анна", 89123456780, null),
+        ContactDirectory("Анна", 89123456780),
         ContactDirectory("Иван", 89123456781, "null"),
         ContactDirectory("Елена", 89123456782, "GitHub"),
-        ContactDirectory("Сергей", 89123456783, null)
+        ContactDirectory("Сергей", 89123456783)
     )
 
     printUniqueCompanies(contacts)

@@ -30,6 +30,5 @@ fun authorize(username: String, password: String): String? =
     else null
 
 fun getCart(token: String): List<String> {
-    val cart = listOf("товар1", "товар2", "товар3")
-    return cart
+    return listOf("товар1", "товар2", "товар3")
 }

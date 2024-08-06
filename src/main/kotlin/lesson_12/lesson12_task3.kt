@@ -11,6 +11,7 @@ class WeatherInfo(
     var nightTimeTemperature = kelvinNightTimeTemperature - KELVIN
 
     fun displayWeather() {
+        println("Погода на сегодня:")
         println("Дневная температура: $dayTimeTemperature °C")
         println("Ночная температура: $nightTimeTemperature °C")
         if (precipitation) println("Осадки ожидаются.")
@@ -21,6 +22,6 @@ class WeatherInfo(
 fun main() {
     val weatherToday = WeatherInfo(298, 288, false)
 
-    println("Погода на сегодня:")
+
     weatherToday.displayWeather()
 }

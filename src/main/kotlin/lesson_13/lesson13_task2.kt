@@ -7,12 +7,7 @@ class Contact(
 ) {
 
     fun printInfo() {
-        println(
-            """Имя: $name
-            |Номер: $phoneNumber
-            |Компания: ${company ?: "<не указано>"}
-         """.trimMargin()
-        )
+        println("Имя: $name\nНомер: $phoneNumber\nКомпания: ${company ?: "<не указано>"}")
     }
 }
 

@@ -22,5 +22,5 @@ class WeatherInfoData(
 }
 
 fun main() {
-    WeatherInfoData(298, 288, false)
+    val weatherInfo = WeatherInfoData(298, 288, false)
 }

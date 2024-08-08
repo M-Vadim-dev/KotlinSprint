@@ -12,15 +12,16 @@ fun main() {
     while (true) {
         print("Введите номер: ")
         val phoneNumberInput = readln()
-
-        if (phoneNumberInput.all { it.isDigit() }) {
-            phoneNumber = phoneNumberInput.toLongOrNull()
-            if (phoneNumber != null) {
+        try {
+            if (phoneNumberInput.all { it.isDigit() }) {
+                phoneNumber = phoneNumberInput.toLong()
                 println("Номер успешно введён: $phoneNumber")
                 break
-            } else println("Ошибка: не удалось преобразовать строку в номер.")
-
-        } else println("Ошибка: некорректный ввод '$phoneNumberInput'. Введите только цифры.")
-
+            } else throw IllegalArgumentException("Некорректный ввод '$phoneNumberInput'. Введите только цифры.")
+        } catch (e: NumberFormatException) {
+            println("Ошибка: не удалось преобразовать строку в номер.")
+        } catch (e: IllegalArgumentException) {
+            println("Ошибка: ${e.message}")
+        }
     }
 }

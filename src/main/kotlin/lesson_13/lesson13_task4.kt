@@ -16,21 +16,26 @@ class PhoneBookContact(
 
 fun main() {
     val phoneBook = mutableListOf<PhoneBookContact>()
+    var response = "да"
 
-    print("Введите имя: ")
-    val name = readln()
-    print("Введите номер: ")
-    val phoneNumber = readln().toLongOrNull()
+    while (response == "да") {
+        print("Введите имя: ")
+        val name = readln()
+        print("Введите номер: ")
+        val phoneNumber = readln().toLongOrNull()
 
-    if (phoneNumber == null) {
-        println("Ошибка: номер телефона не введен или введен некорректно.")
-        return
+        if (phoneNumber == null) {
+            println("Ошибка: номер телефона не введен или введен некорректно.")
+            continue
+        }
+        print("Введите компанию: ")
+        val company: String? = readln().takeIf { it.isNotBlank() }
+
+        phoneBook.add(PhoneBookContact(name, phoneNumber, company))
+
+        print("Хотите добавить еще контакт? (да/нет): ")
+        response = readln().lowercase()
     }
-
-    print("Введите компанию: ")
-    val company: String? = readln().takeIf { it.isNotBlank() }
-
-    phoneBook.add(PhoneBookContact(name, phoneNumber, company))
 
     PhoneBookContact.printInfo(phoneBook)
 }

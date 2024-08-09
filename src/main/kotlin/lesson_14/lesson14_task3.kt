@@ -16,20 +16,23 @@ class Rectangle(color: String, private val width: Double, private val height: Do
     override fun perimeter(): Int = (2 * (width + height)).toInt()
 }
 
+const val BLACK = "черный"
+const val WHITE = "белый"
+
 fun main() {
     val figures = mutableListOf<Figure>()
 
-    figures.add(Circle("черный", 5.0))
-    figures.add(Rectangle("белый", 4.0, 6.0))
-    figures.add(Circle("белый", 3.0))
-    figures.add(Rectangle("черный", 2.0, 8.0))
+    figures.add(Circle(BLACK, 5.0))
+    figures.add(Rectangle(WHITE, 4.0, 6.0))
+    figures.add(Circle(WHITE, 3.0))
+    figures.add(Rectangle(BLACK, 2.0, 8.0))
 
     val blackPerimeterSum = figures
-        .filter { it.color == "черный" }
+        .filter { it.color == BLACK }
         .sumOf { it.perimeter() }
 
     val whiteSquareSum = figures
-        .filter { it.color == "белый" }
+        .filter { it.color == WHITE }
         .sumOf { it.square() }
 
     println("Сумма периметров всех черных фигур: $blackPerimeterSum")

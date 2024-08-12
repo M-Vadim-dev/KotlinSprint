@@ -1,5 +1,7 @@
 package lesson_16
 
+import kotlin.math.pow
+
 class Circle(private val radius: Double) {
 
     private companion object {
@@ -8,7 +10,7 @@ class Circle(private val radius: Double) {
 
     fun circumference(): Double = 2 * PI * radius
 
-    fun area(): Double = PI * radius * radius
+    fun area(): Double = PI * radius.pow(2.0)
 }
 
 fun main() {

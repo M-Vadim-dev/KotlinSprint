@@ -28,7 +28,8 @@ class Chat {
         messages.groupBy { if (it is ChildMessage) it.parentMessageId else it.id }
             .forEach { (key, msgs) ->
                 msgs.forEach { msg ->
-                    println("${if (msg is ChildMessage) "ChildMessage" else "Message"} [ID: ${msg.id}, Автор: ${msg.author}]: ${msg.text}")
+                    if (msg is ChildMessage) println("\tChildMessage [ID: ${msg.id}, Автор: ${msg.author}]: ${msg.text}")
+                    else println("Message [ID: ${msg.id}, Автор: ${msg.author}]: ${msg.text}")
                 }
             }
     }

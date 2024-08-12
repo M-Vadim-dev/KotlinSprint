@@ -3,7 +3,7 @@ package lesson_17
 class Folder(
     private val _name: String,
     private var _fileCount: Int,
-    private var isSecret: Boolean
+    private var isSecret: Boolean,
 ) {
     val name: String
         get() = if (isSecret) "скрытая папка" else _name

@@ -1,18 +1,24 @@
 package lesson_16
 
+import kotlin.math.abs
+
 class Player(private val name: String, initialHealth: Int, private var attackPower: Int) {
-    private var health: Int = if (initialHealth < 0) 0 else initialHealth
 
     fun takeDamage(damage: Int) {
-        if (health > 0) {
-            health -= damage
-            if (health < 0) health = 0
 
-            println("$name получил $damage урона. Текущее здоровье: $health.")
+        if (health > 0) {
+            health -= abs(damage)
+
+            println("$name получил ${abs(damage)} урона. Текущее здоровье: $health.")
 
             if (health == 0) handleDeath()
 
         } else println("$name мёртв и не может получить урон.")
+
+        if (health < 0) {
+            health = 0
+            println("$name мёртв.")
+        }
     }
 
     fun heal(amount: Int) {
@@ -33,6 +39,8 @@ class Player(private val name: String, initialHealth: Int, private var attackPow
     fun getName(): String = name
 
     fun getAttackPower(): Int = attackPower
+
+    private var health: Int = if (initialHealth < 0) 0 else initialHealth
 }
 
 fun main() {

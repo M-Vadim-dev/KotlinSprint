@@ -33,10 +33,8 @@ fun main() {
 
     println("Номер заказа: ${order.getOrderNumber()}")
     println("Текущий статус: ${order.getStatus()}")
-
     order.requestStatusChange("В обработке")
     println("Обновлённый статус: ${order.getStatus()}")
-
     order.requestStatusChange("Завершён")
     println("Обновлённый статус: ${order.getStatus()}")
 }

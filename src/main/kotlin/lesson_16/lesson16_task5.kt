@@ -11,14 +11,9 @@ class Player(private val name: String, initialHealth: Int, private var attackPow
 
             println("$name получил ${abs(damage)} урона. Текущее здоровье: $health.")
 
-            if (health == 0) handleDeath()
+            if (health <= 0) handleDeath()
 
         } else println("$name мёртв и не может получить урон.")
-
-        if (health < 0) {
-            health = 0
-            println("$name мёртв.")
-        }
     }
 
     fun heal(amount: Int) {

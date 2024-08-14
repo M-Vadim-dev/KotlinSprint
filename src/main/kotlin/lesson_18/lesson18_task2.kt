@@ -1,10 +1,10 @@
 package lesson_18
 
-open class Die(val sides: Int) {
+open class Dice(val sides: Int) {
     open fun roll() {}
 }
 
-class Die4() : Die(4) {
+class Dice4() : Dice(4) {
 
     override fun roll() {
         val result = (1..sides).random()
@@ -12,7 +12,7 @@ class Die4() : Die(4) {
     }
 }
 
-class Die6() : Die(6) {
+class Dice6() : Dice(6) {
 
     override fun roll() {
         val result = (1..sides).random()
@@ -20,7 +20,7 @@ class Die6() : Die(6) {
     }
 }
 
-class Die8() : Die(8) {
+class Dice8() : Dice(8) {
 
     override fun roll() {
         val result = (1..sides).random()
@@ -29,13 +29,13 @@ class Die8() : Die(8) {
 }
 
 fun main() {
-    val die4 = Die4()
-    val die6 = Die6()
-    val die8 = Die8()
+    val dice4 = Dice4()
+    val dice6 = Dice6()
+    val dice8 = Dice8()
 
-    val dice: List<Die> = listOf(die4, die6, die8)
+    val dice: List<Dice> = listOf(dice4, dice6, dice8)
 
-    for (die in dice) {
-        die.roll()
+    for (i in dice) {
+        i.roll()
     }
 }

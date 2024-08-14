@@ -1,7 +1,7 @@
 package lesson_18
 
-open class Dice(val sides: Int) {
-    open fun roll() {}
+abstract class Dice(val sides: Int) {
+    abstract fun roll()
 }
 
 class Dice4() : Dice(4) {

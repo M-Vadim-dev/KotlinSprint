@@ -1,9 +1,12 @@
 package lesson_17
 
-class Ship(private val shipName: String, var averageSpeed: Int, var homePort: String) {
+class Ship(private var _shipName: String, var averageSpeed: Int, var homePort: String) {
 
-    val name: String
-        get() = shipName
+    var name: String
+        get() = _shipName
+        set(value) {
+            println("Нельзя изменить имя корабля \"$name\".")
+        }
 
     var speed: Int
         get() = averageSpeed
@@ -17,10 +20,6 @@ class Ship(private val shipName: String, var averageSpeed: Int, var homePort: St
             homePort = value
         }
 
-    fun updateName(newName: String) {
-        println("Нельзя изменить имя корабля \"$shipName\".")
-    }
-
     fun printInfo() {
         println("Имя корабля: $name")
         println("Средняя скорость: $speed узлов")
@@ -33,7 +32,7 @@ fun main() {
 
     ship.printInfo()
 
-    ship.updateName("Queen Anne's Revenge")
+    ship.name = "Queen Anne's Revenge"
 
     ship.speed = 30
     ship.port = "Порт Роял"

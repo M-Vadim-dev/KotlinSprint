@@ -1,6 +1,6 @@
 package lesson_18
 
-open class Animal(val name: String) {
+abstract class Animal(val name: String) {
     open fun eat() {
         println("$name -> ест")
     }

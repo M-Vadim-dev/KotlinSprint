@@ -13,6 +13,7 @@ enum class Category {
 }
 
 class Product(val name: String, private val id: Int, private val category: Category) {
+
     fun displayInfo() {
         println("Товар: $name (ID: $id), Категория: ${category.getCategoryName()}")
     }

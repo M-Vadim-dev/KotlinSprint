@@ -15,5 +15,6 @@ fun main() {
     val player = Player(name = "Иван", currentHealth = 50, maxHealth = 100)
 
     println("${player.name} имеет текущее здоровье: ${player.currentHealth} из ${player.maxHealth}")
+
     healPotion(player)
 }

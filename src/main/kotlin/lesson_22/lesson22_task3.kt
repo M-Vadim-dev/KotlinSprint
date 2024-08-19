@@ -8,4 +8,5 @@ fun main() {
     val (name, age, city) = person
 
     println("Имя: $name\nВозраст: $age\nГород: $city")
+
 }

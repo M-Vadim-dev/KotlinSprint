@@ -15,7 +15,5 @@ fun main() {
         distanceFromEarthLightYears = 4.367,
     )
 
-    val (name, description, dateTime, distanceFromEarthLightYears) = alphaCentauri
-
-    println("Название: $name\nОписание: $description\nДата и время: $dateTime\nРасстояние от Земли: $distanceFromEarthLightYears световых лет")
+    println("Название: ${alphaCentauri.component1()}\nОписание: ${alphaCentauri.component2()}\nДата и время: ${alphaCentauri.component3()}\nРасстояние от Земли: ${alphaCentauri.component4()} световых лет")
 }

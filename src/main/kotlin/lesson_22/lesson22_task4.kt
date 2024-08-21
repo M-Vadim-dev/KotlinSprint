@@ -9,15 +9,24 @@ class MainScreenViewModel {
     private var mainScreenState = MainScreenState()
 
     fun loadData() {
-        // загрузка данных
+        // начало загрузки данных
         mainScreenState = mainScreenState.copy(isLoading = true)
+        println("Загрузка данных...")
 
         // имитация сетевого запроса
         val fetchedData = retrieveDataFromServer()
+        println("Промежуточное состояние: $mainScreenState")
 
-        mainScreenState = if (fetchedData.isEmpty()) MainScreenState() // отсутствие данных
-        else MainScreenState(data = fetchedData, isLoading = false) // наличие загруженных данных
+        mainScreenState = if (fetchedData.isEmpty()) {
+            println("Отсутствие данных.")
+            MainScreenState()
 
+        } else {
+            println("Наличие загруженных данных: $fetchedData")
+            MainScreenState(data = fetchedData, isLoading = false)
+        }
+
+        println("Окончание процесса загрузки: $mainScreenState")
     }
 
     private fun retrieveDataFromServer(): String = "Загруженные данные с сервера"
@@ -26,6 +35,5 @@ class MainScreenViewModel {
 fun main() {
     val viewModel = MainScreenViewModel()
 
-    println("Загрузка данных...")
     viewModel.loadData()
 }
